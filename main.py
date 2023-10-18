@@ -387,11 +387,12 @@ class gui(): #Should be only gui, with all functions in another file and called 
                     os.startfile(f'{folder}/desc.txt')
                 else:
                     pass
-                try:
-                    shutil.copytree(folder,self.saveNewRemoteSave,dirs_exist_ok=True)
-                except Exception as e:
-                    print(e)
-                    traceback.print_exc()
+                ###Disable this in case there's no VM.
+                # try:
+                #     shutil.copytree(folder,self.saveNewRemoteSave,dirs_exist_ok=True)
+                # except Exception as e:
+                #     print(e)
+                #     traceback.print_exc()
                 self.loadSavesFromFolder()
             else:
                 connectionErrorNX=CTkMessagebox.CTkMessagebox(title='NX Devkit not connected',message='Console is not connected. Maybe the Console is not connected, or the Target Name is incorrect?',icon='cancel')
